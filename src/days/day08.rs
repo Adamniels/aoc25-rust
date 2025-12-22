@@ -60,16 +60,16 @@ fn part2(input: &str) -> i64 {
     unreachable!()
 }
 
-fn parse_input(input: &str) -> Vec<Junction_box> {
+fn parse_input(input: &str) -> Vec<JunctionBox> {
     let mut junc_box_list = vec![];
     let parsed_input = utils::parse_lines(input);
     for line in parsed_input {
-        junc_box_list.push(Junction_box::from_string(line));
+        junc_box_list.push(JunctionBox::from_string(line));
     }
     junc_box_list
 }
 
-fn build_edges(points: &[Junction_box]) -> Vec<Edge> {
+fn build_edges(points: &[JunctionBox]) -> Vec<Edge> {
     let mut edges = Vec::new();
 
     for i in 0..points.len() {
@@ -128,25 +128,26 @@ impl Dsu {
 }
 
 #[derive(Debug)]
-struct Junction_box {
+struct JunctionBox {
     x: i32,
     y: i32,
     z: i32,
 }
 
-impl Junction_box {
+impl JunctionBox {
+    #[allow(unused)]
     fn new(x: i32, y: i32, z: i32) -> Self {
-        Junction_box { x, y, z }
+        JunctionBox { x, y, z }
     }
     fn from_string(line: &str) -> Self {
         let nums: Vec<i32> = line.split(',').map(|s| s.parse().unwrap()).collect();
 
         let (x, y, z) = (nums[0], nums[1], nums[2]);
-        Junction_box { x, y, z }
+        JunctionBox { x, y, z }
     }
 
     // behöver inte sqrt för kan ändå jämföra avstånd
-    fn distance_sq(&self, other: &Junction_box) -> i64 {
+    fn distance_sq(&self, other: &JunctionBox) -> i64 {
         let dx = self.x as i64 - other.x as i64;
         let dy = self.y as i64 - other.y as i64;
         let dz = self.z as i64 - other.z as i64;

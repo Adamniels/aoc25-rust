@@ -6,6 +6,7 @@ pub fn parse_lines(input: &str) -> Vec<&str> {
 }
 
 /// Parse input into a vector of numbers
+#[allow(unused)]
 pub fn parse_numbers<T: std::str::FromStr>(input: &str) -> Vec<T>
 where
     T::Err: std::fmt::Debug,
@@ -17,6 +18,7 @@ where
 }
 
 /// Split input by blank lines (useful for grouped data)
+#[allow(unused)]
 pub fn split_by_blank_lines(input: &str) -> Vec<&str> {
     input.split("\n\n").collect()
 }
