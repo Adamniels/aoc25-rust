@@ -5,24 +5,11 @@ pub fn solve(input: &str) {
 }
 
 fn part1(input: &str) -> i32 {
-    // TODO: Implement part 1
-    input
-        .lines()
-        .map(|line| {
-            let digits: Vec<char> = line.chars().filter(|c| c.is_ascii_digit()).collect();
-            if digits.is_empty() {
-                return 0;
-            }
-            let first = digits.first().unwrap().to_digit(10).unwrap() as i32;
-            let last = digits.last().unwrap().to_digit(10).unwrap() as i32;
-            first * 10 + last
-        })
-        .sum()
+    todo!()
 }
 
 fn part2(input: &str) -> i32 {
-    // TODO: Implement part 2
-    part1(input) // Placeholder - replace with actual solution
+    todo!()
 }
 
 #[cfg(test)]
