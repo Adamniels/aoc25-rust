@@ -29,6 +29,7 @@ fn main() {
         8 => days::day08::solve(&input),
         9 => days::day09::solve(&input),
         10 => days::day10::solve(&input),
+        11 => days::day11::solve(&input),
         _ => println!("Day {} not implemented yet", day),
     }
 }
